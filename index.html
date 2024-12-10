@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFNews - Página Inicial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo_ifsul.png" alt="Logo IFNews">
+            <h1>IFNews</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="categories">
+                    Categorias
+                    <ul class="dropdown">
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="esportes.html">Esportes</a></li>
+                        <li><a href="institucional.html">Institucional</a></li>
+                        <li><a href="premiacoes.html">Premiações</a></li>
+                        <li><a href="envie-noticia.html">Envie uma Notícia</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="featured-news">
+            <h2>Destaque</h2>
+            <article>
+                <img src="img/noticia1.jpg" alt="Notícia em destaque">
+                <h3>Mostra de Produção do IFSul começa na segunda (9)</h3>
+                <p>Evento acontece no câmpus Bagé e se estende até o dia 11 de dezembro</p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </article>
+        </section>
+
+        <h2>Últimas Notícias</h2>
+        <section class="news-list">
+            <div class="news-item">
+                <img src="img/noticia2.jpg" alt="Notícia">
+                <h3>A Avaliação da Política de Assistência Estudantil do IFSul já está disponível</h3>
+                <p>Todos os membros da comunidade interna da instituição estão convidados a participar. Os questionários estarão disponíveis até o dia 28 de fevereiro de 2025. </p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia3.jpg" alt="Notícia">
+                <h3>Consolidação: Proedu atinge a marca histórica de 23 milhões de downloads</h3>
+                <p>Plataforma de recursos educacionais abertos alcança usuários em mais de 200 países</p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia4.jpg" alt="Notícia">
+                <h3>Plataforma Mundi</h3>
+                <p>O Mundi oferece cursos gratuítos em diversas áreas</p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia5.jpg" alt="Notícia">
+                <h3>Acompanhe nossas redes sociais</h3>
+                <p>Facebook @IFSuloficial  | Instagram @ifsul_oficial</p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia6.jpg" alt="Notícia">
+                <h3>Certificação Enem/Encceja</h3>
+                <p>Os candidatos que indicaram algum câmpus do IFSul como unidade certificadora do Exame Nacional para Certificação de Competências de Jovens e Adultos (Encceja) já podem fazer a solicitação do documento pela internet. A ferramenta está disponível apenas pelo computador, não podendo ser feita via smartphone.   Acesse o link abaixo  para solicitar a emissão on-line do certificado de conclusão do ensino médio ou da declaração parcial de proficiência.</p>
+                <a href="noticia-detalhe.html">Leia Mais</a>
+            </div>
+
+        </section>
+
+        <section class="countdown">
+            <h2>Próximo Processo Seletivo</h2>
+            <p id="countdown">Faltam ${daysRemaining} dias para o Processo Seletivo do IFSul!</p>
+        </section>
+
+        <section class="logos">
+            <h2>Parcerias</h2>
+            <a href="https://www.utu.edu.uy" target="_blank">
+                <img src="img/logo_utu.png" alt="Logo UTU">
+            </a>
+            <a href="https://utec.edu.uy/pt/" target="_blank">
+                <img src="img/logo_utec.png" alt="Logo UTEC">
+            </a>
+        </section>
+
+        <section class="testimonials">
+            <h2>Depoimentos</h2>
+            <div class="testimonial">
+                <p>"Estudar no IFSul mudou minha vida!" - João Vitor</p>
+            </div>
+            <div class="testimonial">
+                <p>"O suporte que recebemos aqui é incrível." - Luis Eduardo</p>
+            </div>
+            <div class="testimonial">
+                <p>"O IFSul é top!" - Pedro Luna</p>
+            </div>
+            <div class="testimonial">
+                <p>"É muito bom estudar aqui!" - Eliane Freitas</p>
+            </div>
+            <div class="testimonial">
+                <p>"Local muito bem estruturado." - Gerson</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IFNews. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const countdownElement = document.getElementById('countdown');
+            const targetDate = new Date('2024-12-10');
+            const currentDate = new Date();
+
+            const timeDifference = targetDate - currentDate;
+            const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+            countdownElement.textContent = `Faltam ${daysRemaining} dias para o Processo Seletivo do IFSul!`;
+
+            const testimonials = document.querySelectorAll('.testimonial');
+            let currentTestimonialIndex = 0;
+
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    testimonial.style.display = i === index ? 'block' : 'none';
+                });
+            }
+
+            setInterval(() => {
+                currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                showTestimonial(currentTestimonialIndex);
+            }, 3000);
+
+            showTestimonial(currentTestimonialIndex);
+        });
+    </script>
+</body>
+</html>
